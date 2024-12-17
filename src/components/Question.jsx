@@ -5,10 +5,11 @@ export default function Question() {
   const [currentQuestion, setCurrentQuestion] = useState(null); 
   const [answers, setAnswers] = useState({}); // Načítané odpovede
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
+  const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
   const totalImages = 3;
   const options = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
-
+  // Načítaj odpovede pri načítaní stránky
   useEffect(() => {
     fetch("/assets/answr.txt")
       .then((res) => res.text())
@@ -23,12 +24,13 @@ export default function Question() {
     loadRandomImage();
   }, []);
 
-  // Načíta náhodný obrázok a otázku
+  // Načíta náhodný obrázok a resetuje stav
   const loadRandomImage = () => {
     const randomImageNumber = Math.floor(Math.random() * totalImages) + 1;
     setCurrentImage(`/assets/test${randomImageNumber}.png`);
     setCurrentQuestion(randomImageNumber);
     setSelectedOptions({}); // Reset checkboxov
+    setResults({}); // Reset výsledkov
   };
 
   // Spracuje zmenu checkboxu
@@ -38,44 +40,61 @@ export default function Question() {
       [option]: !prev[option],
     }));
   };
-  // Porovná vybrané odpovede
+
+  // Porovná odpovede a nastaví správne checkboxy na zeleno
   const evaluateAnswers = () => {
-    console.log("current q"+currentQuestion)
     const correctAnswer = answers[currentQuestion] || "";
-    const selectedAnswer = options
-      .map((option, index) => (selectedOptions[option] ? "S" : "N"))
-      .join("");
-    if (correctAnswer === selectedAnswer) {
-      alert("Správne!");
-    } else {
-      alert(`Nesprávne! Správna odpoveď je: ${correctAnswer}`);
-    }
+    const newResults = {};
+
+    // Označí všetky správne odpovede
+    options.forEach((option, index) => {
+      if (correctAnswer[index] === "S") {
+        newResults[option] = "correct";
+      }
+    });
+
+    setResults(newResults);
   };
 
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
       <div>
-        <img src={currentImage} alt="Test Image" className="max-w-200" />
+        <img src={currentImage} alt="Test Image" />
       </div>
       <div className="d-flex justify-content-around mt-4 w-75">
-        {options.map((option) => (
-          <div className="form-check d-flex align-items-center" key={option}>
-            <input
-              className="form-check-input checkBoxLarge"
-              type="checkbox"
-              id={`checkbox-${option}`}
-              checked={!!selectedOptions[option]}
-              onChange={() => handleCheckboxChange(option)}
-            />
-            <label
-              className="form-check-label ms-2 text-light"
-              htmlFor={`checkbox-${option}`}
-            >
-              {option}
-            </label>
-          </div>
-        ))}
-      </div>
+  {options.map((option) => (
+    <div
+      className="form-check d-flex flex-column align-items-center"
+      key={option}
+      style={{
+        backgroundColor: results[option] === "correct" ? "#198754" : "transparent",
+        borderRadius: "5px",
+        padding: "5px",
+      }}
+    >
+      <label
+        className="form-check-label text-light"
+        htmlFor={`checkbox-${option}`}
+        style={{
+          marginBottom: "5px", // Malá medzera medzi label a checkboxom
+          textAlign: "center", // Zarovná text na stred
+        }}
+      >
+        {option}
+      </label>
+      <input
+        className="form-check-input checkBoxLarge"
+        type="checkbox"
+        id={`checkbox-${option}`}
+        checked={!!selectedOptions[option]}
+        onChange={() => handleCheckboxChange(option)}
+        style={{
+          margin: "0 auto", // Uistí sa, že checkbox je presne na stred
+        }}
+      />
+    </div>
+  ))}
+</div>
       <button onClick={evaluateAnswers} type="button" className="btn btn-success mt-5">
         Vyhodnotiť
       </button>
@@ -85,5 +104,6 @@ export default function Question() {
     </div>
   );
 }
+
 
 
