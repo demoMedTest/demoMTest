@@ -11,7 +11,7 @@ export default function Question() {
 
   // Načítaj odpovede pri načítaní stránky
   useEffect(() => {
-     fetch(`/assets/answr.txt`)
+    fetch(`${import.meta.env.BASE_URL}assets/answr.txt`)
       .then((res) => res.text())
       .then((data) => {
         const parsedAnswers = data.split("\n").reduce((acc, line) => {
@@ -27,7 +27,7 @@ export default function Question() {
   // Načíta náhodný obrázok a resetuje stav
   const loadRandomImage = () => {
     const randomImageNumber = Math.floor(Math.random() * totalImages) + 1;
-    setCurrentImage(`/assets/test${randomImageNumber}.png`);
+    setCurrentImage(`${import.meta.env.BASE_URL}assets/test${randomImageNumber}.png`);
     setCurrentQuestion(randomImageNumber);
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
