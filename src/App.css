@@ -1,0 +1,14 @@
+.checkBoxLarge {
+  height: 30px !important;
+  width: 30px !important;
+  padding: 5px !important;
+}
+
+/* Zvýraznenie labelu pri hoverovaní 
+.form-check-input:hover + .form-check-label,
+.form-check-label:hover {
+  transform: scale(1.2); 
+  transition: transform 0.3s ease-in-out; 
+}
+*/
+
