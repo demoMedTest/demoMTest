@@ -1,7 +1,10 @@
 .checkBoxLarge {
-  height: 30px !important;
-  width: 30px !important;
+  height: 20px !important;
+  width: 20px !important;
   padding: 5px !important;
+}
+.hvrOption:hover {
+  cursor: pointer;
 }
 
 /* Zvýraznenie labelu pri hoverovaní 
