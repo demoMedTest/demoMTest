@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(400); // Index aktuálnej otázky
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Index aktuálnej otázky
   const [answers, setAnswers] = useState({}); // Načítané odpovede
   const [questions, setQuestions] = useState([]); // Načítané otázky
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
@@ -55,10 +55,10 @@ export default function Question() {
             ...questionOptions,
           });
         }
-
-        console.log("Parsed Questions:", parsedQuestions); // Debugging načítaných otázok
         setQuestions(parsedQuestions);
       });
+    const randomIndex = Math.floor(Math.random() * 1000);
+    setCurrentQuestionIndex(randomIndex);
   }, []);
 
   // Načíta náhodnú otázku a resetuje stav
@@ -68,7 +68,6 @@ export default function Question() {
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
   };
-
   // Spracuje zmenu checkboxu
   const handleCheckboxChange = (option) => {
     setSelectedOptions((prev) => ({
@@ -82,10 +81,16 @@ export default function Question() {
     const correctAnswer = answers[currentQuestionIndex + 1] || ""; // Odpovede sú indexované od 1
     const newResults = {};
 
-    // Označí všetky správne odpovede
+    // Prejdite cez všetky možnosti
     options.forEach((option, index) => {
       if (correctAnswer[index] === "S") {
-        newResults[option] = "correct";
+        // Správna odpoveď
+        newResults[option] =
+          selectedOptions[option] === true ? "correct" : "missed"; // Ak nebola zvolená, označte ako "missed"
+      } else {
+        // Nesprávna odpoveď
+        newResults[option] =
+          selectedOptions[option] === true ? "wrong" : "neutral"; // Neutral pre nezvolenú nesprávnu
       }
     });
 
@@ -93,27 +98,20 @@ export default function Question() {
   };
 
   return (
-    <div className="d-flex  flex-column mainContainer">
-      <div className="text-light ">
+    <div className="d-flex flex-column mainContainer">
+      <div className="text-light">
         {questions.length > 0 ? (
           <>
             <h3>{`${currentQuestionIndex + 1}. ${
               questions[currentQuestionIndex]?.q || "Načítavam otázky..."
             }`}</h3>
-            <div className="d-flex mt-4 flex-column ">
+            <div className="d-flex mt-4 flex-column">
               {Object.entries(questions[currentQuestionIndex] || {})
                 .filter(([key]) => key !== "q" && key !== "number")
                 .map(([key, value]) => (
                   <div
                     className="form-check d-flex align-items-center p-1 mt-2"
                     key={key}
-                    style={{
-                      backgroundColor:
-                        results[key.toUpperCase()] === "correct"
-                          ? "#198754"
-                          : "transparent",
-                      borderRadius: "5px",
-                    }}
                   >
                     <input
                       className="form-check-input me-2 hvrOption"
@@ -127,6 +125,22 @@ export default function Question() {
                       htmlFor={`checkbox-${key}`}
                       style={{
                         wordBreak: "break-word", // Zalomí dlhý text
+                        backgroundColor:
+                          results[key.toUpperCase()] === "correct"
+                            ? "#198754" // Zelená pre správne označenú
+                            : results[key.toUpperCase()] === "wrong"
+                            ? "#dc3545" // Červená pre nesprávne označenú
+                            : results[key.toUpperCase()] === "missed"
+                            ? "#dc3545" // Červená pre neoznačenú správnu
+                            : "transparent", // Transparent pre ostatné
+                        color:
+                          results[key.toUpperCase()] === "correct" ||
+                          results[key.toUpperCase()] === "wrong" ||
+                          results[key.toUpperCase()] === "missed"
+                            ? "#fff"
+                            : "",
+                        borderRadius: "5px",
+                        padding: "5px", // Voliteľné, pridá priestor okolo textu
                       }}
                     >
                       {value}
@@ -156,4 +170,5 @@ export default function Question() {
     </div>
   );
 }
+
 
