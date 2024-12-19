@@ -60,16 +60,20 @@ export default function Question() {
       });
   }, []);
 
-  // Načíta náhodnú otázku a resetuje stav
   const loadNextQuestion = () => {
-    const min = range.min === "" ? 1 : range.min; // Default na 0, ak je prázdne
+    const min = range.min === "" ? 1 : range.min; // Default na 1, ak je prázdne
     const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
+    let randomIndex;
   
-    const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
-    setCurrentQuestionIndex(randomIndex-1);
+    do {
+      randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (randomIndex - 1 === currentQuestionIndex); // Kontrola, aby sa nevygenerovalo rovnaké číslo
+  
+    setCurrentQuestionIndex(randomIndex - 1); // Nastav index na otázku (offset o -1)
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
   };
+  
   
 
   // Spracuje zmenu checkboxu
@@ -110,10 +114,9 @@ export default function Question() {
     }));
   };
   
-
   return (
     <div className="d-flex flex-column mainContainer">
-      <div className="input-group mb-3 rangeHolder">
+      <div className="input-group mb-3 rangeHolder ms-auto fixed-top">
       <span className="input-group-text">Rozsah:</span>
       <input
         type="number"

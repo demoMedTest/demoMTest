@@ -23,7 +23,9 @@
   float: left;
   margin-left: 0 !important; /* Táto hodnota spôsobuje posunutie checkboxu */
 }
-
+.rangeHolder{
+  margin: 5rem 5rem 0 0;
+}
 /* Pre prehliadače založené na Webkite (Chrome, Edge, Safari) */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -39,9 +41,19 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+@media (max-width: 1600px) { /* Bootstrap breakpoint pre mobily */
+    .rangeHolder{
+      position: initial !important;
+      margin: 1rem 5px 0 0 !important;
+    }
+}
 
 @media (max-width: 768px) { /* Bootstrap breakpoint pre mobily */
   .mainContainer {
     margin: auto 7px;
+    }
+    .rangeHolder{
+      position: initial !important;
+      margin: 1rem 5px 0 0 !important;
     }
 }
