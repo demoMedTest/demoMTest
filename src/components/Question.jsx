@@ -6,7 +6,7 @@ export default function Question() {
   const [questions, setQuestions] = useState([]); // Načítané otázky
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
   const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
-  const [range, setRange] = useState({ min: 0, max: 1000 }); // Rozsah pre generovanie
+  const [range, setRange] = useState({ min: 1, max: 1000 }); // Rozsah pre generovanie
   const options = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   // Načítaj odpovede a otázky pri načítaní stránky
@@ -62,11 +62,11 @@ export default function Question() {
 
   // Načíta náhodnú otázku a resetuje stav
   const loadNextQuestion = () => {
-    const min = range.min === "" ? 0 : range.min; // Default na 0, ak je prázdne
+    const min = range.min === "" ? 1 : range.min; // Default na 0, ak je prázdne
     const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
   
     const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
-    setCurrentQuestionIndex(randomIndex);
+    setCurrentQuestionIndex(randomIndex-1);
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
   };
