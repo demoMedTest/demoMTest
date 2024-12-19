@@ -1,3 +1,7 @@
+.mainContainer{
+  max-width: 800px;
+}
+
 .checkBoxLarge {
   height: 20px !important;
   width: 20px !important;
@@ -9,7 +13,7 @@
 
 .hvrOption:hover {
   cursor: pointer;
-  background-color: rgb(138, 138, 138);
+  background-color: rgb(202, 201, 201);
 }
 
 .hvrOpt:hover{
@@ -20,3 +24,8 @@
   margin-left: 0 !important; /* Táto hodnota spôsobuje posunutie checkboxu */
 }
 
+@media (max-width: 768px) { /* Bootstrap breakpoint pre mobily */
+  .mainContainer {
+    margin: auto 7px;
+    }
+}

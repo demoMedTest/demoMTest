@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(375); // Index aktuálnej otázky
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(400); // Index aktuálnej otázky
   const [answers, setAnswers] = useState({}); // Načítané odpovede
   const [questions, setQuestions] = useState([]); // Načítané otázky
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
