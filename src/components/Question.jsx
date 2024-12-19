@@ -6,6 +6,7 @@ export default function Question() {
   const [questions, setQuestions] = useState([]); // Načítané otázky
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
   const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
+  const [range, setRange] = useState({ min: 0, max: 1000 }); // Rozsah pre generovanie
   const options = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   // Načítaj odpovede a otázky pri načítaní stránky
@@ -38,8 +39,8 @@ export default function Question() {
           }
 
           // Prvý riadok je otázka
-          const questionText = block[0].replace(/^(\d+)\.\s*/, "");
-          const questionNumber = block[0].match(/^(\d+)\./)?.[1] || "";
+          const questionText = block[0].replace(/^\d+\.\s*/, "");
+          const questionNumber = block[0].match(/^\d+\./)?.[0]?.slice(0, -1) || "";
 
           // Zvyšné riadky sú možnosti
           const questionOptions = block.slice(1).reduce((acc, line, index) => {
@@ -57,17 +58,20 @@ export default function Question() {
         }
         setQuestions(parsedQuestions);
       });
-    const randomIndex = Math.floor(Math.random() * 1000);
-    setCurrentQuestionIndex(randomIndex);
   }, []);
 
   // Načíta náhodnú otázku a resetuje stav
   const loadNextQuestion = () => {
-    const randomIndex = Math.floor(Math.random() * questions.length);
+    const min = range.min === "" ? 0 : range.min; // Default na 0, ak je prázdne
+    const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
+  
+    const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
     setCurrentQuestionIndex(randomIndex);
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
   };
+  
+
   // Spracuje zmenu checkboxu
   const handleCheckboxChange = (option) => {
     setSelectedOptions((prev) => ({
@@ -97,8 +101,40 @@ export default function Question() {
     setResults(newResults);
   };
 
+  const handleRangeChange = (e) => {
+    const { name, value } = e.target;
+  
+    setRange((prev) => ({
+      ...prev,
+      [name]: value === "" ? "" : parseInt(value, 10), // Ak je pole prázdne, nechá hodnotu prázdnu
+    }));
+  };
+  
+
   return (
     <div className="d-flex flex-column mainContainer">
+      <div className="input-group mb-3 rangeHolder">
+      <span className="input-group-text">Rozsah:</span>
+      <input
+        type="number"
+        name="min"
+        value={range.min}
+        onChange={handleRangeChange}
+        className="form-control"
+        placeholder="Od"
+        aria-label="Od"
+      />
+      <span className="input-group-text">-</span>
+      <input
+        type="number"
+        name="max"
+        value={range.max}
+        onChange={handleRangeChange}
+        className="form-control"
+        placeholder="Do"
+        aria-label="Do"
+      />
+    </div>
       <div className="text-light">
         {questions.length > 0 ? (
           <>
@@ -124,15 +160,15 @@ export default function Question() {
                       className="form-check-label hvrOpt"
                       htmlFor={`checkbox-${key}`}
                       style={{
-                        wordBreak: "break-word", // Zalomí dlhý text
+                        wordBreak: "break-word",
                         backgroundColor:
                           results[key.toUpperCase()] === "correct"
-                            ? "#198754" // Zelená pre správne označenú
+                            ? "#5e9f58"
                             : results[key.toUpperCase()] === "wrong"
-                            ? "#dc3545" // Červená pre nesprávne označenú
+                            ? "#a84d4d"
                             : results[key.toUpperCase()] === "missed"
-                            ? "#dc3545" // Červená pre neoznačenú správnu
-                            : "transparent", // Transparent pre ostatné
+                            ? "#a84d4d"
+                            : "transparent",
                         color:
                           results[key.toUpperCase()] === "correct" ||
                           results[key.toUpperCase()] === "wrong" ||
@@ -140,7 +176,7 @@ export default function Question() {
                             ? "#fff"
                             : "",
                         borderRadius: "5px",
-                        padding: "5px", // Voliteľné, pridá priestor okolo textu
+                        padding: "5px",
                       }}
                     >
                       {value}

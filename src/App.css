@@ -24,6 +24,22 @@
   margin-left: 0 !important; /* Táto hodnota spôsobuje posunutie checkboxu */
 }
 
+/* Pre prehliadače založené na Webkite (Chrome, Edge, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.rangeHolder{
+  width: 250px !important;
+}
+
+/* Pre Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 @media (max-width: 768px) { /* Bootstrap breakpoint pre mobily */
   .mainContainer {
     margin: auto 7px;
