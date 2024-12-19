@@ -3,15 +3,20 @@
   width: 20px !important;
   padding: 5px !important;
 }
-.hvrOption:hover {
-  cursor: pointer;
+.hvrOption{
+  padding: 2px;
 }
 
-/* Zvýraznenie labelu pri hoverovaní 
-.form-check-input:hover + .form-check-label,
-.form-check-label:hover {
-  transform: scale(1.2); 
-  transition: transform 0.3s ease-in-out; 
+.hvrOption:hover {
+  cursor: pointer;
+  background-color: rgb(138, 138, 138);
 }
-*/
+
+.hvrOpt:hover{
+  cursor: pointer;
+}
+.form-check-input {
+  float: left;
+  margin-left: 0 !important; /* Táto hodnota spôsobuje posunutie checkboxu */
+}
 
