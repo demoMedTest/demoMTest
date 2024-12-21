@@ -177,7 +177,7 @@ export default function Question() {
                 .filter(([key]) => key !== "q" && key !== "number")
                 .map(([key, value]) => (
                   <div
-                    className="form-check d-flex align-items-center p-1 mt-2"
+                    className="form-check d-flex align-items-center p-1 mt-1"
                     key={key}
                   >
                     <input

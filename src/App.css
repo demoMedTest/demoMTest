@@ -13,11 +13,11 @@
 
 .hvrOption:hover {
   cursor: pointer;
-  background-color: rgb(202, 201, 201);
 }
 
 .hvrOpt:hover{
   cursor: pointer;
+  color: rgb(245, 245, 187);
 }
 .form-check-input {
   float: left;
