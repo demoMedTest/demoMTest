@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import Question from './components/Question'
-import './App.css'
-import ReactDOM from 'react-dom';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
+import Question from './components/Question';
+import './App.css';
 
-ReactGA.initialize('G-56FMP4MD64'); // Nahraď "TVOJ_TRACKING_ID" tvojím Tracking ID
-ReactGA.pageview(window.location.pathname + window.location.search); // Zaznamená načítanie stránky
+// Inicializácia Google Analytics
+ReactGA.initialize('G-56FMP4MD64'); 
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <div>
-      <Question></Question>
+      <Question />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
