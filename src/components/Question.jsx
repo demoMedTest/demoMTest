@@ -107,12 +107,38 @@ export default function Question() {
 
   const handleRangeChange = (e) => {
     const { name, value } = e.target;
-  
+
     setRange((prev) => ({
       ...prev,
       [name]: value === "" ? "" : parseInt(value, 10), // Ak je pole prázdne, nechá hodnotu prázdnu
     }));
   };
+
+  const handleUnFocused = (e) => {
+    let { name, value } = e.target;
+
+    if (name === "min" && (value < 1 || value >= 1000)) value = 1;
+    if (name === "max" && (value < 1 || value > 1000)) value = 1000;
+  
+    if (range.min === range.max) {
+      setRange({ min: range.min, max: 1000 });
+      if (name === "max") {
+        value = 1000;
+      }
+    } else if (range.min > range.max) {
+      
+      setRange({ min: range.min, max: 1000 });
+      if (name === "max") {
+        value = 1000;
+      }
+    }
+  
+    setRange((prev) => ({
+      ...prev,
+      [name]: value === "" ? "" : parseInt(value, 10), 
+    }));
+  };
+  
   
   return (
     <div className="d-flex flex-column mainContainer">
@@ -123,6 +149,7 @@ export default function Question() {
         name="min"
         value={range.min}
         onChange={handleRangeChange}
+        onBlur={handleUnFocused}
         className="form-control"
         placeholder="Od"
         aria-label="Od"
@@ -133,6 +160,7 @@ export default function Question() {
         name="max"
         value={range.max}
         onChange={handleRangeChange}
+        onBlur={handleUnFocused}
         className="form-control"
         placeholder="Do"
         aria-label="Do"
