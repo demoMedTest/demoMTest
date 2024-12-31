@@ -7,6 +7,7 @@ export default function Question() {
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
   const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
   const [range, setRange] = useState({ min: 1, max: 1000 }); // Rozsah pre generovanie
+  const[mode, setMode] = useState(false);
   const options = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   // Načítaj odpovede a otázky pri načítaní stránky
@@ -60,6 +61,15 @@ export default function Question() {
       });
   }, []);
 
+  const changeMode = () => {
+    setMode((prev)=>!prev);
+    if(mode == false){
+      document.body.style.background = "#313131"
+    }
+    else{
+      document.body.style.background = "white"
+    }
+  }
   const loadNextQuestion = () => {
     const min = range.min === "" ? 1 : range.min; // Default na 1, ak je prázdne
     const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
@@ -143,6 +153,9 @@ export default function Question() {
   return (
     <div className="d-flex flex-column mainContainer">
       <div className="input-group mb-3 rangeHolder ms-auto fixed-top">
+      <div className="form-check form-switch modeWrapper">
+        <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode}></input>
+      </div>
       <span className="input-group-text">Rozsah:</span>
       <input
         type="number"
@@ -166,7 +179,7 @@ export default function Question() {
         aria-label="Do"
       />
     </div>
-      <div className="text-light">
+      <div className={mode ? "text-light" : "text-dark"}>
         {questions.length > 0 ? (
           <>
             <h3>{`${currentQuestionIndex + 1}. ${

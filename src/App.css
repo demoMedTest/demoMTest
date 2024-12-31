@@ -17,16 +17,19 @@
 
 .hvrOpt:hover{
   cursor: pointer;
-  color: rgb(245, 245, 187);
 }
 .form-check-input {
   float: left;
-  margin-left: 0 !important; /* Táto hodnota spôsobuje posunutie checkboxu */
+  margin-left: 0 !important; 
 }
 .rangeHolder{
   margin: 5rem 5rem 0 0;
 }
-/* Pre prehliadače založené na Webkite (Chrome, Edge, Safari) */
+.modeWrapper{
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -34,21 +37,38 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .rangeHolder{
-  width: 250px !important;
+  width: 320px !important;
+}
+.toggler:checked {
+  background-color: transparent !important; 
+  border-color: #ccc !important; 
 }
 
-/* Pre Firefox */
+.toggler:hover {
+  cursor: pointer;
+}
+
+.form-check-input:focus {
+  box-shadow: none !important; 
+  outline: none !important;   
+}
+
+.toggler {
+  border: 1px solid #ccc !important; 
+}
+
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
-@media (max-width: 1600px) { /* Bootstrap breakpoint pre mobily */
+@media (max-width: 1600px) { 
     .rangeHolder{
       position: initial !important;
       margin: 1rem 5px 0 0 !important;
     }
 }
 
-@media (max-width: 768px) { /* Bootstrap breakpoint pre mobily */
+@media (max-width: 768px) { 
   .mainContainer {
     margin: auto 7px;
     }
