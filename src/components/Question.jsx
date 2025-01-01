@@ -246,7 +246,8 @@ export default function Question() {
       <button
         onClick={loadNextQuestion}
         type="button"
-        className="btn btn-warning mt-5"
+        className="btn btn-warning mt-4"
+        id="resolve"
       >
         Ďalšia otázka
       </button>

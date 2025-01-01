@@ -82,4 +82,7 @@ input[type="number"] {
     .rangeHolder{
       margin: auto !important;
     }
+    #resolve{
+      margin-top: 1rem !important;
+    }
 }
