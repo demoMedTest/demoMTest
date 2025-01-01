@@ -59,17 +59,20 @@ export default function Question() {
         }
         setQuestions(parsedQuestions);
       });
+      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.body.style.background = window.matchMedia('(prefers-color-scheme: dark)').matches ? "#313131" : "white";
   }, []);
 
   const changeMode = () => {
     setMode((prev)=>!prev);
-    if(mode == false){
-      document.body.style.background = "#313131"
-    }
-    else{
+    if(mode){
       document.body.style.background = "white"
     }
+    else{
+      document.body.style.background = "#313131"
+    }
   }
+
   const loadNextQuestion = () => {
     const min = range.min === "" ? 1 : range.min; // Default na 1, ak je prázdne
     const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
@@ -84,7 +87,7 @@ export default function Question() {
     setResults({}); // Reset výsledkov
   };
   
-  
+
 
   // Spracuje zmenu checkboxu
   const handleCheckboxChange = (option) => {
@@ -152,9 +155,9 @@ export default function Question() {
   
   return (
     <div className="d-flex flex-column mainContainer">
-      <div className="input-group mb-3 rangeHolder ms-auto fixed-top">
+      <div className="input-group mb-3 rangeHolder ms-auto fixed-top mb-5">
       <div className="form-check form-switch modeWrapper">
-        <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode}></input>
+        <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
       </div>
       <span className="input-group-text">Rozsah:</span>
       <input

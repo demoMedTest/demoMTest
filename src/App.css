@@ -25,6 +25,9 @@
 .rangeHolder{
   margin: 5rem 5rem 0 0;
 }
+.form-switch{
+  padding: 0 !important;
+}
 .modeWrapper{
   margin-right: 1rem;
   margin-top: 0.5rem;
@@ -37,7 +40,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .rangeHolder{
-  width: 320px !important;
+  width: 280px !important;
 }
 .toggler:checked {
   background-color: transparent !important; 
@@ -75,5 +78,8 @@ input[type="number"] {
     .rangeHolder{
       position: initial !important;
       margin: 1rem 5px 0 0 !important;
+    }
+    .rangeHolder{
+      margin: auto !important;
     }
 }
