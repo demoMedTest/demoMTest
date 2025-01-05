@@ -6,6 +6,7 @@ function App() {
   return (
     <div>
       <Question></Question>
+      <img src="/logoMED.svg" alt="logoMED" height={100}/>
     </div>
   )
 }

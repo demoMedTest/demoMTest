@@ -1,5 +1,10 @@
 .mainContainer{
-  max-width: 800px;
+  max-width: 700px;
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: auto;
 }
 
 .checkBoxLarge {
@@ -58,6 +63,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .toggler {
   border: 1px solid #ccc !important; 
+}
+
+.logo{
+  height: 100px;
 }
 
 
