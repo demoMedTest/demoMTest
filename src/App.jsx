@@ -1,4 +1,5 @@
 import Question from './components/Question'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
   return (
     <div>
       <Question></Question>
-      <img src="/logoMED.svg" alt="logoMED" height={100}/>
+      <Footer></Footer>
     </div>
   )
 }
