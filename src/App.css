@@ -39,14 +39,25 @@
   margin-top: 0.5rem;
 }
 
+.input-group-text{
+  background-color: #F8F9FA !important;
+}
+
+.rozsahText{
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+.btn-group{
+  margin-right: 1rem;
+}
 .rangeHolder{
-  width: 550px !important;
+  width: 570px !important;
 }
 .toggler:checked {
   background-color: transparent !important; 
@@ -133,4 +144,18 @@ input[type="number"] {
       margin-top: 1rem !important;
     }
     
+}
+@media (max-width: 580px) { 
+  
+    .rangeHolder{
+      width: 300px !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-group {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+      
 }

@@ -156,7 +156,12 @@ export default function Question() {
   
   return (
     <div className="d-flex flex-column mainContainer">
+      
+      
       <div className="input-group mb-3 rangeHolder ms-auto fixed-top mb-5">
+      <div className="form-check form-switch modeWrapper">
+        <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
+      </div>
 
       <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked></input>
@@ -165,11 +170,7 @@ export default function Question() {
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"></input>
         <label class="btn btn-outline-success" for="btnradio2">Podľa poradia</label>
       </div>
-
-      <div className="form-check form-switch modeWrapper">
-        <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
-      </div>
-      <span className="input-group-text">Rozsah:</span>
+      <span className="input-group-text rozsahText">Rozsah:</span>
       <input
         type="number"
         name="min"
