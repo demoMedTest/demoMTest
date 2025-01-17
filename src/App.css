@@ -148,7 +148,7 @@ input[type="number"] {
 @media (max-width: 580px) { 
   
     .rangeHolder{
-      width: 300px !important;
+      width: 275px !important;
       display: flex !important;
       justify-content: center;
       align-items: center;
