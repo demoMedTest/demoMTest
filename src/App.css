@@ -28,7 +28,7 @@
   margin-left: 0 !important; 
 }
 .rangeHolder{
-  margin: 5rem 5rem 0 0;
+  margin: 2rem 5rem 0 0;
 }
 .form-switch{
   padding: 0 !important;
@@ -41,6 +41,19 @@
 
 .input-group-text{
   background-color: #F8F9FA !important;
+  border-radius: 0 !important;
+}
+.maxNmb{
+  border-radius: 0 !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+
+.rangeSizer{
+  width: 250px;
+}
+.borderForm{
+  border-radius: 0 !important;
 }
 
 .rozsahText{
@@ -57,7 +70,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-right: 1rem;
 }
 .rangeHolder{
-  width: 570px !important;
+  width: 350px !important;
 }
 .toggler:checked {
   background-color: transparent !important; 
@@ -76,6 +89,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .toggler {
   border: 1px solid #ccc !important; 
 }
+
 
 .imgHolder{
   width: 80px;
@@ -112,7 +126,8 @@ input[type="number"] {
 @media (max-width: 1600px) { 
     .rangeHolder{
       position: initial !important;
-      margin: 1rem 5px 0 0 !important;
+      margin: auto;
+      margin-top: 1rem;
     }
 }
 
@@ -131,31 +146,23 @@ input[type="number"] {
 
 @media (max-width: 768px) { 
   .mainContainer {
-    margin: auto 7px;
+    margin: auto;
+    width: 95%;
     }
-    .rangeHolder{
-      position: initial !important;
-      margin: 1rem 5px 0 0 !important;
-    }
-    .rangeHolder{
-      margin: auto !important;
-    }
+    
     #resolve{
       margin-top: 1rem !important;
     }
     
 }
-@media (max-width: 580px) { 
-  
-    .rangeHolder{
-      width: 275px !important;
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
-    }
-    .btn-group {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-      
+
+@media (max-width: 364px) { 
+  .doubleMenu{
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .btn-group{
+    margin: 0;
+  }
+    
 }
