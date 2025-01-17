@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import 'bootstrap';
+
 
 export default function Question() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Index aktuálnej otázky
@@ -60,16 +62,16 @@ export default function Question() {
         setQuestions(parsedQuestions);
       });
       setMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      document.body.style.background = window.matchMedia('(prefers-color-scheme: dark)').matches ? "#313131" : "white";
+      document.body.style.background = window.matchMedia('(prefers-color-scheme: dark)').matches ? "#212529" : "#F8F9FA";
   }, []);
 
   const changeMode = () => {
     setMode((prev)=>!prev);
     if(mode){
-      document.body.style.background = "white"
+      document.body.style.background = "#F8F9FA"
     }
     else{
-      document.body.style.background = "#313131"
+      document.body.style.background = "#212529"
     }
   }
 
@@ -152,10 +154,18 @@ export default function Question() {
     }));
   };
   
-  
   return (
     <div className="d-flex flex-column mainContainer">
       <div className="input-group mb-3 rangeHolder ms-auto fixed-top mb-5">
+
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked></input>
+        <label class="btn btn-outline-success" for="btnradio1">Náhodný výber</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"></input>
+        <label class="btn btn-outline-success" for="btnradio2">Podľa poradia</label>
+      </div>
+
       <div className="form-check form-switch modeWrapper">
         <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
       </div>
