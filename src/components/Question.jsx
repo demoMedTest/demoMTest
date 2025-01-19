@@ -10,6 +10,7 @@ export default function Question() {
   const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
   const [range, setRange] = useState({ min: 1, max: 1000 }); // Rozsah pre generovanie
   const[mode, setMode] = useState(false);
+  const[nextQuestionRandom, setNextQuestionRandom] = useState(true);
   const options = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   // Načítaj odpovede a otázky pri načítaní stránky
@@ -78,6 +79,8 @@ export default function Question() {
   const loadNextQuestion = () => {
     const min = range.min === "" ? 1 : range.min; // Default na 1, ak je prázdne
     const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
+    
+    if(nextQuestionRandom){
     let randomIndex;
   
     do {
@@ -85,6 +88,19 @@ export default function Question() {
     } while (randomIndex - 1 === currentQuestionIndex); // Kontrola, aby sa nevygenerovalo rovnaké číslo
   
     setCurrentQuestionIndex(randomIndex - 1); // Nastav index na otázku (offset o -1)
+    }else{
+      if(currentQuestionIndex>=min-1 && currentQuestionIndex<=max-1){
+        if(currentQuestionIndex+1 == max){
+        setCurrentQuestionIndex(min-1);
+      } else{
+        setCurrentQuestionIndex(currentQuestionIndex+1);
+      }
+      
+    }else{
+      setCurrentQuestionIndex(min-1);
+    }
+    }
+
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
   };
@@ -153,6 +169,14 @@ export default function Question() {
       [name]: value === "" ? "" : parseInt(value, 10), 
     }));
   };
+
+  const handleSelectionOrderChange = (e) =>{
+      if(e.target.id =="btnradio1"){
+        setNextQuestionRandom(true);
+      } else{
+        setNextQuestionRandom(false);
+      }
+  }
   
   return (
     <div className="d-flex flex-column mainContainer">
@@ -164,12 +188,12 @@ export default function Question() {
           <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
         </div>
 
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked></input>
-          <label class="btn btn-outline-success" for="btnradio1">Náhodný výber</label>
+        <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" className="btn-check" name="btnradio" id="btnradio1" defaultChecked={true} onChange={handleSelectionOrderChange}></input>
+          <label className="btn btn-outline-success" htmlFor="btnradio1">Náhodný výber</label>
 
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"></input>
-          <label class="btn btn-outline-success" for="btnradio2">Podľa poradia</label>
+          <input type="radio" className="btn-check" name="btnradio" id="btnradio2" onChange={handleSelectionOrderChange}></input>
+          <label className="btn btn-outline-success" htmlFor="btnradio2">Podľa poradia</label>
         </div>
       </div>
       <div className="d-flex rangeSizer">

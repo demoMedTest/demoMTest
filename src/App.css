@@ -27,9 +27,7 @@
   float: left;
   margin-left: 0 !important; 
 }
-.rangeHolder{
-  margin: 2rem 5rem 0 0;
-}
+
 .form-switch{
   padding: 0 !important;
 }
@@ -71,6 +69,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .rangeHolder{
   width: 350px !important;
+  margin: 2rem 5rem 0 0;
 }
 .toggler:checked {
   background-color: transparent !important; 
@@ -123,7 +122,14 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-@media (max-width: 1600px) { 
+
+@media (max-width: 1700px) { 
+  .rangeHolder{
+    margin: 2rem 1rem 0 0;
+  }
+}
+
+@media (max-width: 1450px) { 
     .rangeHolder{
       position: initial !important;
       margin: auto;
