@@ -78,7 +78,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .rangeHolder{
   width: 350px !important;
-  margin: 2rem 5rem 0 0;
+  margin: 5rem 5rem 0 0;
 }
 .toggler:checked {
   background-color: transparent !important; 
@@ -179,5 +179,7 @@ input[type="number"] {
   .btn-group{
     margin: 0;
   }
-    
+  .toggler{
+    margin-bottom: 1rem;
+  }
 }

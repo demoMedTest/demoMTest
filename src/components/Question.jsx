@@ -6,62 +6,78 @@ export default function Question() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Index aktuálnej otázky
   const [answers, setAnswers] = useState({}); // Načítané odpovede
   const [questions, setQuestions] = useState([]); // Načítané otázky
+  const [questions2, setQuestions2] = useState([]);
+  const [answers2, setAnswers2] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
   const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
   const [range, setRange] = useState({ min: 1, max: 1000 }); // Rozsah pre generovanie
   const[mode, setMode] = useState(false);
   const[nextQuestionRandom, setNextQuestionRandom] = useState(true);
+  const[isBiology, setIsBiology] = useState(true);
   const options = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+  const loadFiles = (fileQuestions, fileAnswers, bio) =>{
+    fetch(`${import.meta.env.BASE_URL}assets/${fileAnswers}`)
+    .then((res) => res.text())
+    .then((data) => {
+      const parsedAnswers = data.split("\n").reduce((acc, line) => {
+        if (line.trim() === "") return acc; // Preskočí prázdne riadky
+        const [question, answer] = line.trim().split(" ");
+        acc[parseInt(question)] = answer; // Priradí číslo otázky a odpoveď
+        return acc;
+      }, {});
+      if(bio){
+      setAnswers(parsedAnswers);
+    }else{
+      setAnswers2(parsedAnswers);
+    }
+    });
+
+  fetch(`${import.meta.env.BASE_URL}assets/${fileQuestions}`)
+    .then((res) => res.text())
+    .then((data) => {
+      // Rozdeľ na riadky
+      const lines = data.split("\n").filter((line) => line.trim() !== "");
+
+      // Skupinovanie na bloky (otázka + 8 možností)
+      const parsedQuestions = [];
+      for (let i = 0; i < lines.length; i += 9) {
+        const block = lines.slice(i, i + 9); // Vezmi 9 riadkov
+        if (block.length !== 9) {
+          console.log(`Skipping block due to incorrect line count:`, block);
+          continue;
+        }
+
+        // Prvý riadok je otázka
+        const questionText = block[0].replace(/^\d+\.\s*/, "");
+        const questionNumber = block[0].match(/^\d+\./)?.[0]?.slice(0, -1) || "";
+
+        // Zvyšné riadky sú možnosti
+        const questionOptions = block.slice(1).reduce((acc, line, index) => {
+          const key = String.fromCharCode(97 + index); // Generuje 'a', 'b', 'c', ...
+          acc[key] = line.trim();
+          return acc;
+        }, {});
+
+        // Ulož otázku do výsledku
+        parsedQuestions.push({
+          number: questionNumber,
+          q: questionText,
+          ...questionOptions,
+        });
+      }
+      if(bio){
+      setQuestions(parsedQuestions);
+      }else{
+        setQuestions2(parsedQuestions);
+      }
+    });
+  }
 
   // Načítaj odpovede a otázky pri načítaní stránky
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}assets/C_odpovede.txt`)
-      .then((res) => res.text())
-      .then((data) => {
-        const parsedAnswers = data.split("\n").reduce((acc, line) => {
-          if (line.trim() === "") return acc; // Preskočí prázdne riadky
-          const [question, answer] = line.trim().split(" ");
-          acc[parseInt(question)] = answer; // Priradí číslo otázky a odpoveď
-          return acc;
-        }, {});
-        setAnswers(parsedAnswers);
-      });
-
-    fetch(`${import.meta.env.BASE_URL}assets/C_otazky.txt`)
-      .then((res) => res.text())
-      .then((data) => {
-        // Rozdeľ na riadky
-        const lines = data.split("\n").filter((line) => line.trim() !== "");
-
-        // Skupinovanie na bloky (otázka + 8 možností)
-        const parsedQuestions = [];
-        for (let i = 0; i < lines.length; i += 9) {
-          const block = lines.slice(i, i + 9); // Vezmi 9 riadkov
-          if (block.length !== 9) {
-            console.log(`Skipping block due to incorrect line count:`, block);
-            continue;
-          }
-
-          // Prvý riadok je otázka
-          const questionText = block[0].replace(/^\d+\.\s*/, "");
-          const questionNumber = block[0].match(/^\d+\./)?.[0]?.slice(0, -1) || "";
-
-          // Zvyšné riadky sú možnosti
-          const questionOptions = block.slice(1).reduce((acc, line, index) => {
-            const key = String.fromCharCode(97 + index); // Generuje 'a', 'b', 'c', ...
-            acc[key] = line.trim();
-            return acc;
-          }, {});
-
-          // Ulož otázku do výsledku
-          parsedQuestions.push({
-            number: questionNumber,
-            q: questionText,
-            ...questionOptions,
-          });
-        }
-        setQuestions(parsedQuestions);
-      });
+      loadFiles("B_otazky.txt","B_odpovede.txt",true);
+      loadFiles("C_otazky.txt","C_odpovede.txt",false);
       setMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
       document.body.style.background = window.matchMedia('(prefers-color-scheme: dark)').matches ? "#212529" : "#F8F9FA";
   }, []);
@@ -117,7 +133,7 @@ export default function Question() {
 
   // Porovná odpovede a nastaví správne checkboxy na zeleno
   const evaluateAnswers = () => {
-    const correctAnswer = answers[currentQuestionIndex + 1] || ""; // Odpovede sú indexované od 1
+    const correctAnswer = (isBiology ? answers : answers2)[currentQuestionIndex + 1] || ""; // Odpovede sú indexované od 1
     const newResults = {};
 
     // Prejdite cez všetky možnosti
@@ -177,6 +193,17 @@ export default function Question() {
         setNextQuestionRandom(false);
       }
   }
+
+  const handleFieldChange = (e) =>{
+    if(e.target.id == "btnradio3"){
+      setIsBiology(true);
+    }else{
+      setIsBiology(false);
+    }
+    setSelectedOptions({}); // Reset checkboxov
+    setResults({}); // Reset výsledkov
+    setCurrentQuestionIndex(0);
+  }
   
   return (
     <div className="d-flex flex-column mainContainer">
@@ -188,10 +215,10 @@ export default function Question() {
           <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
         </div>
         <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" className="btn-check" name="btnradio" id="btnradio3" defaultChecked={true} ></input>
+          <input type="radio" className="btn-check" name="btnradio" id="btnradio3" defaultChecked={true} onChange={handleFieldChange} ></input>
           <label className="btn btn-outline-secondary" htmlFor="btnradio3">BIOLÓGIA</label>
 
-          <input type="radio" className="btn-check" name="btnradio" id="btnradio4" ></input>
+          <input type="radio" className="btn-check" name="btnradio" id="btnradio4" onChange={handleFieldChange} ></input>
           <label className="btn btn-outline-secondary" htmlFor="btnradio4">CHÉMIA</label>
         </div>
         
@@ -232,11 +259,13 @@ export default function Question() {
       <div className={mode ? "text-light" : "text-dark"}>
         {questions.length > 0 ? (
           <>
-            <h3>{`${currentQuestionIndex + 1}. ${
-              questions[currentQuestionIndex]?.q || "Načítavam otázky..."
-            }`}</h3>
+            <h3>
+              {`${currentQuestionIndex + 1}. ${
+                (isBiology ? questions : questions2)[currentQuestionIndex]?.q || "Načítavam otázky..."
+              }`}
+            </h3>
             <div className="d-flex mt-4 flex-column">
-              {Object.entries(questions[currentQuestionIndex] || {})
+              {Object.entries((isBiology ? questions : questions2)[currentQuestionIndex] || {})
                 .filter(([key]) => key !== "q" && key !== "number")
                 .map(([key, value]) => (
                   <div
