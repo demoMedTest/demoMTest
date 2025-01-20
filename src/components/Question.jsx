@@ -244,7 +244,7 @@ export default function Question() {
                     key={key}
                   >
                     <input
-                      className="form-check-input me-2 hvrOption"
+                      className={`form-check-input me-2 hvrOption ${mode ? 'border-0' : 'border-dark'}`}
                       type="checkbox"
                       id={`checkbox-${key}`}
                       checked={!!selectedOptions[key.toUpperCase()]}
