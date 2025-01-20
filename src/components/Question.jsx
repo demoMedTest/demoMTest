@@ -15,7 +15,7 @@ export default function Question() {
 
   // Načítaj odpovede a otázky pri načítaní stránky
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}assets/B_odpovede.txt`)
+    fetch(`${import.meta.env.BASE_URL}assets/C_odpovede.txt`)
       .then((res) => res.text())
       .then((data) => {
         const parsedAnswers = data.split("\n").reduce((acc, line) => {
@@ -27,7 +27,7 @@ export default function Question() {
         setAnswers(parsedAnswers);
       });
 
-    fetch(`${import.meta.env.BASE_URL}assets/B_otazky.txt`)
+    fetch(`${import.meta.env.BASE_URL}assets/C_otazky.txt`)
       .then((res) => res.text())
       .then((data) => {
         // Rozdeľ na riadky
@@ -187,15 +187,23 @@ export default function Question() {
         <div className="form-check form-switch modeWrapper">
           <input className="form-check-input toggler" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode} checked={mode? true: false}></input>
         </div>
-
         <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" className="btn-check" name="btnradio" id="btnradio1" defaultChecked={true} onChange={handleSelectionOrderChange}></input>
-          <label className="btn btn-outline-success" htmlFor="btnradio1">Náhodný výber</label>
+          <input type="radio" className="btn-check" name="btnradio" id="btnradio3" defaultChecked={true} ></input>
+          <label className="btn btn-outline-secondary" htmlFor="btnradio3">BIOLÓGIA</label>
 
-          <input type="radio" className="btn-check" name="btnradio" id="btnradio2" onChange={handleSelectionOrderChange}></input>
-          <label className="btn btn-outline-success" htmlFor="btnradio2">Podľa poradia</label>
+          <input type="radio" className="btn-check" name="btnradio" id="btnradio4" ></input>
+          <label className="btn btn-outline-secondary" htmlFor="btnradio4">CHÉMIA</label>
         </div>
+        
       </div>
+      <div className="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" className="btn-check" name="btnradio1" id="btnradio1" defaultChecked={true} onChange={handleSelectionOrderChange}></input>
+          <label className={`btn ${mode ? 'btn-outline-warning' : 'btn-outline-primary'}`} htmlFor="btnradio1">Náhodný výber</label>
+
+          <input type="radio" className="btn-check" name="btnradio1" id="btnradio2" onChange={handleSelectionOrderChange}></input>
+          <label className={`btn ${mode ? 'btn-outline-warning' : 'btn-outline-primary'}`} htmlFor="btnradio2">Podľa poradia</label>
+        </div>
+      
       <div className="d-flex rangeSizer">
       <span className="input-group-text rozsahText">Rozsah:</span>
       <input
@@ -285,7 +293,7 @@ export default function Question() {
       <button
         onClick={loadNextQuestion}
         type="button"
-        className="btn btn-warning mt-4"
+        className={`btn mt-4 ${mode ? 'btn-warning' : 'btn-primary'}`}
         id="resolve"
       >
         Ďalšia otázka
