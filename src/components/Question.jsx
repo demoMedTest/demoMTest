@@ -198,10 +198,10 @@ export default function Question() {
       </div>
       <div className="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
           <input type="radio" className="btn-check" name="btnradio1" id="btnradio1" defaultChecked={true} onChange={handleSelectionOrderChange}></input>
-          <label className={`btn ${mode ? 'btn-outline-warning' : 'btn-outline-primary'}`} htmlFor="btnradio1">Náhodný výber</label>
+          <label className="btn btn-outline-warning" htmlFor="btnradio1">Náhodný výber</label>
 
           <input type="radio" className="btn-check" name="btnradio1" id="btnradio2" onChange={handleSelectionOrderChange}></input>
-          <label className={`btn ${mode ? 'btn-outline-warning' : 'btn-outline-primary'}`} htmlFor="btnradio2">Podľa poradia</label>
+          <label className="btn btn-outline-warning" htmlFor="btnradio2">Podľa poradia</label>
         </div>
       
       <div className="d-flex rangeSizer">
@@ -293,7 +293,7 @@ export default function Question() {
       <button
         onClick={loadNextQuestion}
         type="button"
-        className={`btn mt-4 ${mode ? 'btn-warning' : 'btn-primary'}`}
+        className="btn mt-4 btn-warning"
         id="resolve"
       >
         Ďalšia otázka

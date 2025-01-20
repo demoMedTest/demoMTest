@@ -46,6 +46,18 @@
   border-top-right-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
 }
+.yelow1{
+  background-color: #FFD700 !important;
+}
+.yelow{
+  border: 1px solid #D4A017 !important;
+  color: #D4A017 !important;
+}
+.btn-check:checked + .yelow {
+  background-color: #D4A017 !important;
+  color: white !important;
+  border-color: #D4A017 !important;
+}
 
 .rangeSizer{
   width: 250px;
