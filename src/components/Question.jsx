@@ -78,8 +78,8 @@ export default function Question() {
   useEffect(() => {
       loadFiles("B_otazky.txt","B_odpovede.txt",true);
       loadFiles("C_otazky.txt","C_odpovede.txt",false);
-      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      document.body.style.background = window.matchMedia('(prefers-color-scheme: dark)').matches ? "#212529" : "#F8F9FA";
+      setMode(true);
+      document.body.style.background = "#212529";
   }, []);
 
   const changeMode = () => {
