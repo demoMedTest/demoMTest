@@ -134,8 +134,19 @@ export default function Question() {
           behavior: 'smooth'
         });
       }
-    }, 20); // Oneskorenie 50 ms
-    
+
+      const h3Element = document.querySelector('h3');
+      const computedStyle = window.getComputedStyle(h3Element);
+      const marginTop = parseFloat(computedStyle.marginTop);
+      const yPosition = h3Element.getBoundingClientRect().top + window.scrollY - marginTop;
+
+      if (yPosition<=3){
+        h3Element.style.marginTop = "1rem";
+      } else {
+        h3Element.style.marginTop = "0";
+      }
+      
+    }, 20); 
     
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
