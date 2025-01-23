@@ -117,22 +117,25 @@ export default function Question() {
     }
     
     }
-    if(window.innerWidth >=1450){
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }else if(window.innerWidth <=364){
-      window.scrollTo({
-        top: 240,
-        behavior: 'smooth'
-      });
-    }else {
-      window.scrollTo({
-        top: 190,
-        behavior: 'smooth'
-      });
-    }
+    setTimeout(() => {
+      if (window.innerWidth >= 1450) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else if (window.innerWidth <= 364) {
+        window.scrollTo({
+          top: 240,
+          behavior: 'smooth'
+        });
+      } else {
+        window.scrollTo({
+          top: 190,
+          behavior: 'smooth'
+        });
+      }
+    }, 20); // Oneskorenie 50 ms
+    
     
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
