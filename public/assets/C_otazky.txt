@@ -150,13 +150,13 @@ h) 16
 
 16. Elektrónová hladina M môže obsahovať:
 a) maximálne 16 elektrónov
-b) len p orbitály
-c) len s a p orbitály
-d) s, p, d orbitály
+b) len <i>p</i> orbitály
+c) len <i>s</i> a <i>p</i> orbitály
+d) <i>s</i>, <i>p</i>, <i>d</i> orbitály
 e) maximálne 12 elektrónov
 f) maximálne 18 elektrónov
 g) maximálne 8 elektrónov
-h) 2n2 elektrónov, kde n = hlavné kvantové číslo
+h) <i>2n<sup>2</sup></i> elektrónov, kde <i>n</i> = hlavné kvantové číslo
 
 17. Neutrón:
 a) je častica, ktorej hmotnosť sa približne rovná hmotnosti molekuly vodíka
@@ -179,24 +179,24 @@ g) atómu sodíka sa ľahko odtrhne a vzniká z neho katión sodíka
 h) má hmotnosť približne 1830-krát nižšiu ako hmotnosť atómu vodíka
 
 19. Podľa Pauliho princípu:
-a) v orbitále px môže byť maximálne 1 elektrón
-b) v orbitále py môžu byť maximálne 2 elektróny
-c) v orbitále py môže byť maximálne 6 elektrónov
-d) v orbitále pz môže byť maximálne 10 elektrónov
-e) v orbitále s môže byť maximálne 1 elektrón
-f) v orbitále s môžu byť maximálne 2 elektróny
-g) v orbitáloch d môže byť maximálne 10 elektrónov
+a) v orbitále <i>p<sub>x</sub></i> môže byť maximálne 1 elektrón
+b) v orbitále <i>p<sub>y</sub></i> môžu byť maximálne 2 elektróny
+c) v orbitále <i>p<sub>y</sub></i> môže byť maximálne 6 elektrónov
+d) v orbitále <i>p<sub>z</sub></i> môže byť maximálne 10 elektrónov
+e) v orbitále <i>s</i> môže byť maximálne 1 elektrón
+f) v orbitále <i>s</i> môžu byť maximálne 2 elektróny
+g) v orbitáloch <i>d</i> môže byť maximálne 10 elektrónov
 h) v orbitále môžu byť najviac 2 elektróny s opačným spinom
 
 20. Podľa Hundovho pravidla je elektrónová konfigurácia atómu:
-a) bóru 11 5B:[He] 2s2 2px1
-b) síry 32 16S: 1s2 2s2 2px2 2py2 2pz2 3s2 3px2 3py1 3pz1
-c) dusíka 14 7N: 1s2 2s1 2px2 2py1 2pz1
-d) berýlia 9 4Be: 1s2 2s1 2px1
-e) lítia 7 3Li: 1s2 2s2
-f) bóru 11 5B: 1s2 2s2 2px1
-g) dusíka 14 7N: 1s2 2s2 2px1 2py1 2pz1
-h) draslíka 39 19K: [Ar] 5s1
+a) bóru <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">11</td></tr> <tr><td style="text-align:center; line-height:1;">5</td></tr> </table> B </b>:[He] 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup>
+b) síry <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">32</td></tr> <tr><td style="text-align:center; line-height:1;">16</td></tr> </table> S</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>2</sup> 2p<sub>y</sub><sup>2</sup> 2p<sub>z</sub><sup>2</sup> 3s<sup>2</sup> 3p<sub>x</sub><sup>2</sup> 3p<sub>y</sub><sup>1</sup> 3p<sub>z</sub><sup>1</sup>
+c) dusíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">14</td></tr> <tr><td style="text-align:center; line-height:1;">7</td></tr> </table> N</b>: 1s<sup>2</sup> 2s<sup>1</sup> 2p<sub>x</sub><sup>2</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup>
+d) berýlia <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">9</td></tr> <tr><td style="text-align:center; line-height:1;">4</td></tr> </table> Be</b>: 1s<sup>2</sup> 2s<sup>1</sup> 2p<sub>x</sub><sup>1</sup>
+e) lítia <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">7</td></tr> <tr><td style="text-align:center; line-height:1;">3</td></tr> </table> Li</b>: 1s<sup>2</sup> 2s<sup>2</sup>
+f) bóru <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">11</td></tr> <tr><td style="text-align:center; line-height:1;">5</td></tr> </table> B</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup>
+g) dusíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">14</td></tr> <tr><td style="text-align:center; line-height:1;">7</td></tr> </table> N</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup>
+h) draslíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">39</td></tr> <tr><td style="text-align:center; line-height:1;">19</td></tr> </table> K</b>: [Ar] 5s<sup>1</sup>
 
 21. Energia, ktorá sa spotrebuje na rozštiepenie určitej chemickej väzby:
 a) je rovnaká ako aktivačná energia
@@ -952,7 +952,7 @@ h) je proces, pri ktorom molekula organickej zlúčeniny prijíma dva atómy vod
 a) je každá chemická reakcia, pri ktorej atómy prvkov alebo ióny prijímajú elektróny
 b) je každá chemická reakcia, pri ktorej atómy prvkov alebo ióny odovzdávajú elektróny
 c) sa spája so znižovaním kladného oxidačného čísla atómov
-d) striebra vodíkom prebieha podľa reakcie Ag2S + H2 --> 2 Ag + H2S
+d) striebra vodíkom prebieha podľa reakcie Ag<sub>2</sub>S + H<sub>2</sub> --> 2 Ag + H<sub>2</sub>S
 e) je proces, pri ktorom látka prijíma dva vodíkové protóny
 f) organických zlúčenín sa nazýva dehydrogenácia
 g) je aj zlučovanie látok s vodíkom
@@ -974,7 +974,7 @@ b) ktoré sú akceptormi atómov vodíka pri dehydrogenácii látok
 c) ktoré pri oxidačno-redukčnej reakcii prijímajú elektróny
 d) ktoré sú donormi elektrónov pri chemickej reakcii
 e) ktoré sa pri chemickej reakcii redukujú
-f) medzi ktoré môžeme zaradiť KMnO4, H2O2a KClO3
+f) medzi ktoré môžeme zaradiť KMnO<sub>4</sub>, H<sub>2</sub>O<sub>2</sub> a KClO<sub>3</sub>
 g) ktoré majú schopnosť oxidovať iné látky, pričom sa redukujú
 h) ktoré majú schopnosť redukovať iné látky, pričom sa oxidujú
 
@@ -982,7 +982,7 @@ h) ktoré majú schopnosť redukovať iné látky, pričom sa oxidujú
 a) oxidačno-redukčná
 b) pri ktorej jedna látka (molekuly tej istej zlúčeniny, rovnaké ióny alebo atómy toho istého prvku) prijíma i odovzdáva elektróny
 c) pri ktorej rovnaké ióny alebo atómy toho istého prvku podliehajú oxidácii i redukcii 
-d) Cl2 + H2O --> HClO + HCl
+d) Cl<sub>2</sub> + H<sub>2</sub>O --> HClO + HCl
 e) 2 CH = O - OH- -> CH2OH + COO-
 f) 2 KMnO4 + 16 HCl --> 5 Cl2 + 2 MnCl2 + 2 KCl + 8 H2O
 g) 3 K2MnO4 + 2 H2O --> 2 KMnO4 + MnO2 + 4 KOH

@@ -332,8 +332,8 @@ export default function Question() {
                         borderRadius: "5px",
                         padding: "5px",
                       }}
+                      dangerouslySetInnerHTML={{ __html: value }}
                     >
-                      {value}
                     </label>
                   </div>
                 ))}
