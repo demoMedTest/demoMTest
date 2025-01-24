@@ -290,11 +290,13 @@ export default function Question() {
       <div className={mode ? "text-light" : "text-dark"}>
         {questions.length > 0 ? (
           <>
-            <h3>
-              {`${currentQuestionIndex + 1}. ${
-                (isBiology ? questions : questions2)[currentQuestionIndex]?.q || "Načítavam otázky..."
-              }`}
-            </h3>
+            <h3
+              dangerouslySetInnerHTML={{
+                __html: `${currentQuestionIndex + 1}. ${
+                  (isBiology ? questions : questions2)[currentQuestionIndex]?.q || "Načítavam otázky..."
+                }`,
+              }}
+            ></h3>
             <div className="d-flex mt-4 flex-column">
               {Object.entries((isBiology ? questions : questions2)[currentQuestionIndex] || {})
                 .filter(([key]) => key !== "q" && key !== "number")

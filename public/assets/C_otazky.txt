@@ -20,7 +20,7 @@ h) schopnosťou tvoriť vodíkové väzby
 
 3. Pitná voda je:
 a) pravý roztok
-b) zložená len z molekúl H2O
+b) zložená len z molekúl H<sub>2</sub>O
 c) homogénna zmes
 d) zmes chemických látok
 e) nepravý roztok
@@ -44,12 +44,12 @@ b) chemické indivíduum
 c) homogénna látka
 d) dobré rozpúšťadlo iónových zlúčenín
 e) dobré rozpúšťadlo nepolárnych látok
-f) zložená z molekúl H2O
+f) zložená z molekúl H<sub>2</sub>O
 g) silný elektrolyt
 h) látka, ktorá nie je elektrolyt
 
 6. Elektróny:
-a) rovnakých atómov sa podieľajú na tvorbe nepolárnej kovalentnej väzby (napr. v molekule N2)
+a) rovnakých atómov sa podieľajú na tvorbe nepolárnej kovalentnej väzby (napr. v molekule N<sub>2</sub>)
 b) hovoríme o nich, že sú v základnom stave, ak majú najnižšiu energiu
 c) obsadzujú jednotlivé hladiny v atóme podľa ich klesajúcej energie
 d) môžu byť odtrhnuté od atómu a vznikajú pri tom anióny
@@ -66,12 +66,12 @@ d) nukleón
 e) hmota
 f) zlúčenina
 g) každé chemické indivíduum
-h) molekula, napr. H2
+h) molekula, napr. H<sub>2</sub>
 
 8. Chemické indivíduum môže byť:
 a) roztok NaCl v destilovanej vode
 b) len zlúčenina
-c) Al2O3
+c) Al<sub>2</sub>O<sub>3</sub>
 d) elektrón
 e) pitná voda
 f) morská voda
@@ -88,7 +88,7 @@ f) ktorá vznikne z molekuly vodíka stratou jedného elektrónu
 g) ktorá vznikne z atómu vodíka stratou jedného elektrónu
 h) elektroneutrálna
 
-10. Nuklidy 11H, 21H a 31H
+10. Nuklidy <table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">1</td></tr> <tr><td style="text-align:right; line-height:1;">1</td></tr> </table>H, <table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">2</td></tr> <tr><td style="text-align:right; line-height:1;">1</td></tr> </table>H a <table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">3</td></tr> <tr><td style="text-align:right; line-height:1;">1</td></tr> </table>H
 a) sú izotopy
 b) majú rovnaký počet protónov
 c) majú rovnaký počet neutrónov
@@ -98,7 +98,7 @@ f) majú rôzny počet neutrónov
 g) majú rôzny počet protónov
 h) majú rovnaké protónové číslo
 
-11. Nuklidy 16 8O, 17 8O a 18 8O
+11. Nuklidy <table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">16</td></tr> <tr><td style="text-align:right; line-height:1;">8</td></tr> </table>O, <table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">17</td></tr> <tr><td style="text-align:right; line-height:1;">8</td></tr> </table>O a <table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">18</td></tr> <tr><td style="text-align:right; line-height:1;">8</td></tr> </table>O
 a) sú v prírode zastúpené v rovnakom množstve
 b) majú rovnaký počet neutrónov
 c) majú rovnaký počet nukleónov
@@ -126,7 +126,7 @@ d) hlavné kvantové číslo dnes známych prvkov nadobúda hodnoty 1 až 7
 e) má vplyv na veľkosť hraničnej plochy orbitálov
 f) ak má hodnotu n = 3, maximálny počet elektrónov v elektrónovej vrstve je 16
 g) označuje sa písmenom l
-h) určuje energiu elektrónu v atóme vodíka podľa vzťahu En= B.n2
+h) určuje energiu elektrónu v atóme vodíka podľa vzťahu E<sub>n</sub>= B.n<sup>2</sup>
 
 14. Pre vedľajšie kvantové číslo platí:
 a) vymedzuje hodnoty magnetického kvantového čísla
@@ -143,7 +143,7 @@ a) 2
 b) 8
 c) 18
 d) 32
-e) možné vypočítať zo vzťahu 2n2
+e) možné vypočítať zo vzťahu 2n<sup>2</sup>
 f) 6
 g) 12
 h) 16
@@ -189,14 +189,14 @@ g) v orbitáloch <i>d</i> môže byť maximálne 10 elektrónov
 h) v orbitále môžu byť najviac 2 elektróny s opačným spinom
 
 20. Podľa Hundovho pravidla je elektrónová konfigurácia atómu:
-a) bóru <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">11</td></tr> <tr><td style="text-align:center; line-height:1;">5</td></tr> </table> B </b>:[He] 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup>
-b) síry <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">32</td></tr> <tr><td style="text-align:center; line-height:1;">16</td></tr> </table> S</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>2</sup> 2p<sub>y</sub><sup>2</sup> 2p<sub>z</sub><sup>2</sup> 3s<sup>2</sup> 3p<sub>x</sub><sup>2</sup> 3p<sub>y</sub><sup>1</sup> 3p<sub>z</sub><sup>1</sup>
-c) dusíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">14</td></tr> <tr><td style="text-align:center; line-height:1;">7</td></tr> </table> N</b>: 1s<sup>2</sup> 2s<sup>1</sup> 2p<sub>x</sub><sup>2</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup>
-d) berýlia <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">9</td></tr> <tr><td style="text-align:center; line-height:1;">4</td></tr> </table> Be</b>: 1s<sup>2</sup> 2s<sup>1</sup> 2p<sub>x</sub><sup>1</sup>
-e) lítia <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">7</td></tr> <tr><td style="text-align:center; line-height:1;">3</td></tr> </table> Li</b>: 1s<sup>2</sup> 2s<sup>2</sup>
-f) bóru <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">11</td></tr> <tr><td style="text-align:center; line-height:1;">5</td></tr> </table> B</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup>
-g) dusíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">14</td></tr> <tr><td style="text-align:center; line-height:1;">7</td></tr> </table> N</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup>
-h) draslíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:center; line-height:1;">39</td></tr> <tr><td style="text-align:center; line-height:1;">19</td></tr> </table> K</b>: [Ar] 5s<sup>1</sup>
+a) bóru <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">11</td></tr> <tr><td style="text-align:right; line-height:1;">5</td></tr> </table> B </b>:[He] 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup>
+b) síry <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">32</td></tr> <tr><td style="text-align:right; line-height:1;">16</td></tr> </table> S</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>2</sup> 2p<sub>y</sub><sup>2</sup> 2p<sub>z</sub><sup>2</sup> 3s<sup>2</sup> 3p<sub>x</sub><sup>2</sup> 3p<sub>y</sub><sup>1</sup> 3p<sub>z</sub><sup>1</sup>
+c) dusíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">14</td></tr> <tr><td style="text-align:right; line-height:1;">7</td></tr> </table> N</b>: 1s<sup>2</sup> 2s<sup>1</sup> 2p<sub>x</sub><sup>2</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup>
+d) berýlia <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">9</td></tr> <tr><td style="text-align:right; line-height:1;">4</td></tr> </table> Be</b>: 1s<sup>2</sup> 2s<sup>1</sup> 2p<sub>x</sub><sup>1</sup>
+e) lítia <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">7</td></tr> <tr><td style="text-align:right; line-height:1;">3</td></tr> </table> Li</b>: 1s<sup>2</sup> 2s<sup>2</sup>
+f) bóru <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">11</td></tr> <tr><td style="text-align:right; line-height:1;">5</td></tr> </table> B</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup>
+g) dusíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">14</td></tr> <tr><td style="text-align:right; line-height:1;">7</td></tr> </table> N</b>: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sub>x</sub><sup>1</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup>
+h) draslíka <b><table style="display:inline; border-collapse:collapse; vertical-align:baseline; position:relative; top:-0.4em; right: -0.2em; font-size:0.8em;"> <tr><td style="text-align:right; line-height:1;">39</td></tr> <tr><td style="text-align:right; line-height:1;">19</td></tr> </table> K</b>: [Ar] 5s<sup>1</sup>
 
 21. Energia, ktorá sa spotrebuje na rozštiepenie určitej chemickej väzby:
 a) je rovnaká ako aktivačná energia
@@ -205,7 +205,7 @@ c) je vyššia ako energia, ktorá sa uvoľní pri jej vzniku
 d) je rovnaká ako ionizačná energia
 e) je disociačná energia väzby
 f) je nazývaná tiež väzbová energia
-g) udáva sa napr. v jednotkách kJ.mol-1
+g) udáva sa napr. v jednotkách kJ.mol <sup>-1</sup>
 h) je nižšia ako energia, ktorá sa uvoľní pri jej vzniku
 
 22. V molekule peroxidu vodíka:
@@ -255,10 +255,10 @@ c) kovovej
 d) kovalentnej nepolárnej
 e) vodíkovej
 f) iónovej
-g) ktorá sa nachádza aj v NH4+
+g) ktorá sa nachádza aj v NH4<sup>+</sup>
 h) ktorá je typická pre iónové zlúčeniny
 
-27. V NH4Cl medzi jednotlivými atómami môžu byť väzby:
+27. V NH<sub>4</sub>Cl medzi jednotlivými atómami môžu byť väzby:
 a) iónová
 b) donorovo-akceptorová
 c) kovalentná
@@ -270,12 +270,12 @@ h) σ a π
 
 28. Nepolárna je molekula:
 a) CO
-b) CO2
-c) N2
-d) CH3CH2OH
-e) O2
-f) H2O
-g) Cl2
+b) CO<sub>2</sub>
+c) N<sub>2</sub>
+d) CH<sub>3</sub>CH<sub>2</sub>OH
+e) O<sub>2</sub>
+f) H<sub>2</sub>O
+g) Cl<sub>2</sub>
 h) HCl
 
 29. Jednoduchá kovalentná väzba:
