@@ -84,7 +84,7 @@ export default function Question() {
       setTimeout(() => {
         let info = document.getElementById("infoBox");
         info.style.display = "none";
-      },10000);
+      },15000);
       
   }, []);
 
@@ -372,7 +372,7 @@ export default function Question() {
     <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
   </div>
   <div className="toast-body">
-    Z chémie je upravených prvých 150 otázok. (horný a dolný index)
+    Z chémie je upravených prvých 200 otázok. (horný a dolný index). Ak nájdete niekde chybu tak dajte vedieť :)
   </div>
 </div>
     </div>
