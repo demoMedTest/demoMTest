@@ -168,7 +168,7 @@ export default function Question() {
     }));
   };
 
-  // Porovná odpovede a nastaví správne checkboxy na zeleno
+  // Porovná odpovede a nastaví správne checkboxy na zelenoaaa
   const evaluateAnswers = () => {
     const correctAnswer = (isBiology ? answers : answers2)[currentQuestionIndex + 1] || ""; // Odpovede sú indexované od 1
     const newResults = {};
