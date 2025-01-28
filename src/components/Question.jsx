@@ -10,7 +10,7 @@ export default function Question() {
   const [answers2, setAnswers2] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState({}); // Vybrané checkboxy
   const [results, setResults] = useState({}); // Uchováva stav správnych odpovedí
-  const [range, setRange] = useState({ min: 1, max: 1000 }); // Rozsah pre generovanie
+  const [range, setRange] = useState({ min: 1, max: 10 }); // Rozsah pre generovanie
   const[mode, setMode] = useState(false);
   const[nextQuestionRandom, setNextQuestionRandom] = useState(true);
   const[isBiology, setIsBiology] = useState(true);
@@ -100,7 +100,7 @@ export default function Question() {
 
   const loadNextQuestion = () => {
     const min = range.min === "" ? 1 : range.min; // Default na 1, ak je prázdne
-    const max = range.max === "" ? 1000 : range.max; // Default na 1000, ak je prázdne
+    const max = range.max === "" ? 10 : range.max; // Default na 1000, ak je prázdne
     
     if(nextQuestionRandom){
     let randomIndex;
@@ -201,19 +201,19 @@ export default function Question() {
   const handleUnFocused = (e) => {
     let { name, value } = e.target;
 
-    if (name === "min" && (value < 1 || value >= 1000)) value = 1;
-    if (name === "max" && (value < 1 || value > 1000)) value = 1000;
+    if (name === "min" && (value < 1 || value >= 10)) value = 1;
+    if (name === "max" && (value < 1 || value > 10)) value = 10;
   
     if (range.min === range.max) {
-      setRange({ min: range.min, max: 1000 });
+      setRange({ min: range.min, max: 10 });
       if (name === "max") {
-        value = 1000;
+        value = 10;
       }
     } else if (range.min > range.max) {
       
-      setRange({ min: range.min, max: 1000 });
+      setRange({ min: range.min, max: 10 });
       if (name === "max") {
-        value = 1000;
+        value = 10;
       }
     }
   
