@@ -366,15 +366,6 @@ export default function Question() {
       >
         Ďalšia otázka
       </button>
-      <div id="infoBox" className="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-  <div className="toast-header">
-    <strong className="me-auto">INFO</strong>
-    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
-  <div className="toast-body">
-    Z chémie je upravených prvých 400 otázok. (horný a dolný index). Ak nájdete niekde chybu tak dajte vedieť :)
-  </div>
-</div>
     </div>
   );
 }
