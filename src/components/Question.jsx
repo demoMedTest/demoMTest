@@ -14,6 +14,9 @@ export default function Question() {
   const[mode, setMode] = useState(false);
   const[nextQuestionRandom, setNextQuestionRandom] = useState(true);
   const[isBiology, setIsBiology] = useState(true);
+  const[countBiology, setCountBiology] = useState(0);
+  const[countChemistry, setCountChemistry] = useState(0);
+  const[isFirst, setIsFirst] = useState(true);
   const options = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   const loadFiles = (fileQuestions, fileAnswers, bio) =>{
@@ -131,12 +134,12 @@ export default function Question() {
         });
       } else if (window.innerWidth <= 364) {
         window.scrollTo({
-          top: 240,
+          top: 300,
           behavior: 'smooth'
         });
       } else {
         window.scrollTo({
-          top: 190,
+          top: 250,
           behavior: 'smooth'
         });
       }
@@ -156,6 +159,7 @@ export default function Question() {
     
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
+    setIsFirst(true);
   };
   
 
@@ -187,6 +191,7 @@ export default function Question() {
     });
 
     setResults(newResults);
+    handleCountChange();
   };
 
   const handleRangeChange = (e) => {
@@ -240,6 +245,19 @@ export default function Question() {
     setSelectedOptions({}); // Reset checkboxov
     setResults({}); // Reset výsledkov
     setCurrentQuestionIndex(0);
+    setIsFirst(true);
+  }
+
+  const handleCountChange= () =>{
+    if(isFirst){
+      if(isBiology){
+        setCountBiology(countBiology+1);
+      }
+      else{
+        setCountChemistry(countChemistry+1)
+      }
+    }
+    setIsFirst(false);
   }
   
   return (
@@ -268,7 +286,7 @@ export default function Question() {
           <label className="btn btn-outline-warning" htmlFor="btnradio2">Podľa poradia</label>
         </div>
       
-      <div className="d-flex rangeSizer">
+      <div className="d-flex rangeSizer mb-3">
       <span className="input-group-text rozsahText">Rozsah:</span>
       <input
         type="number"
@@ -291,6 +309,10 @@ export default function Question() {
         placeholder="Do"
         aria-label="Do"
       />
+      </div>
+      <div className={`d-flex rangeSizer p-2 border rounded align-items-center fs-6  ${mode ? "text-light border-secondary" : " bg-transparent"}`}>
+        <p className="w-50 m-0">BIO - {countBiology}</p>
+        <p className="m-0">CHE - {countChemistry}</p>
       </div>
     </div>
       <div className={mode ? "text-light" : "text-dark"}>
