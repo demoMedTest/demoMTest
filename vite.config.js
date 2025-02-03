@@ -13,13 +13,14 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /\/assets\/.*\.(?:txt)$/,  // Cachovanie súborov z assets priečinka
-            handler: 'NetworkFirst', // Najskôr pokúsi sa načítať z internetu, ak nie je, použije cache
+            // Cachovanie všetkých súborov v priečinku public (aj podpriečinky)
+            urlPattern: /\/.*\.(?:js|css|html|json|txt|jpg|jpeg|png|svg|gif|webp|mp4|woff2?)$/,  // Môžeš pridať ďalšie prípony podľa potreby
+            handler: 'CacheFirst', // Najskôr kontroluje cache, ak nie je, pošle požiadavku na server
             options: {
-              cacheName: 'assets-cache',
+              cacheName: 'public-assets-cache',
               expiration: {
-                maxEntries: 50,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 dní
+                maxEntries: 100,  // Maximálny počet položiek v cache
+                maxAgeSeconds: 60 * 60 * 24 * 30, // Maximálna doba uchovávania súborov (30 dní)
               },
             },
           },
