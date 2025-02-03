@@ -14,12 +14,12 @@ export default defineConfig({
         runtimeCaching: [
           {
             urlPattern: /\/assets\/.*\.(?:txt)$/,  // Cachovanie súborov z assets priečinka
-            handler: 'CacheFirst', // Najskôr kontroluje cache, ak nie je, pošle požiadavku na server
+            handler: 'NetworkFirst', // Najskôr pokúsi sa načítať z internetu, ak nie je, použije cache
             options: {
               cacheName: 'assets-cache',
               expiration: {
-                maxEntries: 50,  // Maximálny počet položiek v cache
-                maxAgeSeconds: 60 * 60 * 24 * 30, // Maximálna doba uchovávania súborov (30 dní)
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 dní
               },
             },
           },
